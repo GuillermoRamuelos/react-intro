@@ -1,0 +1,15 @@
+.TodoCounter {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 48px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.TodoCounter span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+}
+
+.TodoCounter p.Invisible{
+    visibility: hidden;
+}
