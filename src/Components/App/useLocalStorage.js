@@ -1,4 +1,5 @@
 import React from "react";
+// localStorage.removeItem("TODOs_V1");
 
 // const defaultTodos = [
 //   { text: "Cortar cebolla", completed: true },
@@ -9,27 +10,40 @@ import React from "react";
 // ];
 
 // localStorage.setItem("TODOs_V1", JSON.stringify(defaultTodos));
-// localStorage.removeItem("TODOs_V1");
 
 function useLocalStorage(itemName, initialValue) {
-  let localStorageItem = localStorage.getItem(itemName);
-  let parsedItems;
+  // Estados
+  const [item, setItem] = React.useState(initialValue);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItems = initialValue;
-  } else {
-    parsedItems = JSON.parse(localStorageItem);
-  }
+  // Usando EFecto
+  React.useEffect(() => {
+    setTimeout(() => {
+      try {
+        let parsedItems;
+        let localStorageItem = localStorage.getItem(itemName);
 
-  const [item, seItem] = React.useState(parsedItems);
+        if (!localStorageItem) {
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
+          parsedItems = initialValue;
+        } else {
+          parsedItems = JSON.parse(localStorageItem);
+          setItem(parsedItems);
+        }
+      } catch (error) {
+        setError(true);
+      }
+      setLoading(false);
+    }, 2000); // TImer para simular que está cargando los todos
+  }, []);
 
   const saveItem = (newItem) => {
-    seItem(newItem);
+    setItem(newItem);
     localStorage.setItem(itemName, JSON.stringify(newItem));
   };
 
-  return [item, saveItem];
+  return { item, saveItem, loading, error };
 }
 
 export { useLocalStorage };

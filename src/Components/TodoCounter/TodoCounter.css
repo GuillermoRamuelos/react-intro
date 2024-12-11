@@ -9,7 +9,3 @@
 .TodoCounter span {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
 }
-
-.TodoCounter p.Invisible{
-    visibility: hidden;
-}
