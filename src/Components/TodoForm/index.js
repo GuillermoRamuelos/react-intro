@@ -22,6 +22,7 @@ function TodoForm() {
       <label id="todoText">Dime tu nuevo TODO</label>
       <textarea
         placeholder="Hacer ejercicio"
+        maxLength={100}
         value={newTodoText}
         onChange={(event) => {
           setNewTodoText(event.target.value);
