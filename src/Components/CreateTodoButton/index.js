@@ -1,12 +1,12 @@
+import React from "react";
 import "./CreateTodoButton.css";
 
-function CreateTodoButton() {
+function CreateTodoButton({ setOpenModal }) {
   return (
     <button
       className="CreateTodoButton"
-      onClick={(event) => {
-        console.log("Le diste click al botón");
-        console.log(event.target);
+      onClick={() => {
+        setOpenModal((state) => !state); // Obtiene el valor con el state, lo niega y lo manda
       }}
     >
       +

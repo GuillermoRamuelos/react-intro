@@ -1,15 +1,4 @@
 import React from "react";
-// localStorage.removeItem("TODOs_V1");
-
-// const defaultTodos = [
-//   { text: "Cortar cebolla", completed: true },
-//   { text: "Llorar con la Llorona", completed: true },
-//   { text: "Terminar curso de React", completed: false },
-//   { text: "Usar estados derivados", completed: 1 },
-//   { text: "LALALA" },
-// ];
-
-// localStorage.setItem("TODOs_V1", JSON.stringify(defaultTodos));
 
 function useLocalStorage(itemName, initialValue) {
   // Estados
@@ -47,3 +36,15 @@ function useLocalStorage(itemName, initialValue) {
 }
 
 export { useLocalStorage };
+
+// localStorage.removeItem("TODOs_V1");
+
+// const defaultTodos = [
+//   { text: "Cortar cebolla", completed: true },
+//   { text: "Llorar con la Llorona", completed: true },
+//   { text: "Terminar curso de React", completed: false },
+//   { text: "Usar estados derivados", completed: 1 },
+//   { text: "LALALA" },
+// ];
+
+// localStorage.setItem("TODOs_V1", JSON.stringify(defaultTodos));

@@ -1,7 +1,7 @@
 // import "./EmptyTodos.css";
 
 function EmptyTodos() {
-  return <p>! Hay tacos...</p>;
+  return <p>NO hay tacos...</p>;
 }
 
 export { EmptyTodos };
